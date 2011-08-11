@@ -150,9 +150,12 @@ template<class T>
 bool Tree<T>::addElement(const T& ele)
 {
 	Node<T>* temp=findNode(ele);//checks if element exists in the tree 
-	Node<T>* tempRoot=_root;
 	if(_root==NULL)//in case tree is empty
-		_root=new Node<T>(ele);
+		{
+			_root=new Node<T>(ele);
+			return true;
+		}
+	Node<T>* tempRoot=_root;
 	if(!temp)//in case element doesn't exist in tree adds it to the tree
 	{
 		temp=new Node<T>(ele);//calling c'tor
