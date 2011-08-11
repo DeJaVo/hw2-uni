@@ -71,9 +71,9 @@ Node<T>* Tree<T>::findNode(const T& ele) const
 	Node<T>* temp=_root;
 	while(temp!=NULL)
 	{
-		if(temp->getElement()==ele)
+		if(*temp==ele)
 			return temp;
-		else if(temp->getElement()<ele)
+		else if(*temp<ele)
 			temp=temp->getRight();
 		else temp=temp->getLeft();
 	}
@@ -143,5 +143,45 @@ bool Tree<T>::deleteElement(const T& input)
 	}
 	else
 		return false;
+}
+
+//adds element to the tree,if a node with the same value exists, the function should return false otehrwise, it should return true
+template<class T>
+bool Tree<T>::addElement(const T& ele)
+{
+	Node<T>* temp=findNode(ele);//checks if element exists in the tree 
+	Node<T>* tempRoot=_root;
+	if(_root==NULL)//in case tree is empty
+		_root=new Node<T>(ele);
+	if(!temp)//in case element doesn't exist in tree adds it to the tree
+	{
+		temp=new Node<T>(ele);//calling c'tor
+		while(tempRoot!=NULL)
+		{
+			if(*temp<*tempRoot)
+			{
+				if(tempRoot->getLeft()!=NULL)
+					tempRoot=tempRoot->getLeft();
+				else//adds the node to the tree
+				{
+					tempRoot->setLeft(temp);
+					temp->setParent(tempRoot);
+					return true;
+				}
+			}
+			else 
+			{
+				if(tempRoot->getRight()!=NULL)
+					tempRoot=tempRoot->getRight()
+				else//adds the node to the tree
+				{
+					tempRoot->setRight(temp);
+					temp->setParent(tempRoot);
+					return true;
+				}
+			}
+		}
+	}
+	return false;
 }
 #endif

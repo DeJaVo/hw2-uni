@@ -47,7 +47,6 @@ Node<T>::Node()
 	_parent=NULL;
 	_right=NULL;
 	_left=NULL;
-	_element=T();//check if it works OK//
 }
 
 //assignment operator
@@ -64,21 +63,21 @@ Node<T>& Node<T>::operator=(const Node& node)
 template <class T> 
 bool Node<T>::operator<(const Node& node) const
 {
-	return _element<node._element?true:false;
+	return _element<node.getElement()?true:false;
 }
 
 //operator ==
 template <class T>
 bool Node<T>::operator==(const Node& node) const
 {
-	return _element==node._element?true:false;
+	return _element==node.getElement()?true:false;
 }
 
 //operator << - friend function
 template<class T>
 ostream& operator<<(ostream& out, const Node<T>& node)
 {
-	out<<node._element;
+	out<<node.getElement();
 	return out;
 }
 

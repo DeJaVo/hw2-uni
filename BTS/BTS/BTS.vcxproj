@@ -74,13 +74,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\..\שנה א%27\סמסטר קיץ\OOP\HW\HW2\BTS\BTS\main.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\שנה א%27\סמסטר קיץ\OOP\HW\HW2\BTS\BTS\Movie.cpp" />
+    <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Movie.h" />
+    <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Node.h" />
+    <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Tree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\..\שנה א%27\סמסטר קיץ\OOP\HW\HW2\BTS\BTS\Movie.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\שנה א%27\סמסטר קיץ\OOP\HW\HW2\BTS\BTS\Node.h" />
-    <ClInclude Include="..\..\..\..\..\..\..\שנה א%27\סמסטר קיץ\OOP\HW\HW2\BTS\BTS\Tree.h" />
+    <ClCompile Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Movie.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
