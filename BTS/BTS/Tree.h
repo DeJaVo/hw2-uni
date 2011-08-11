@@ -93,6 +93,8 @@ Node<T>* Tree<T>::getMaximum() const
 	}
 	return temp;
 }
+
+//deletes a node, if the deletion succeeded returns true otherwise, returns false  
 template <class T>
 bool Tree<T>::deleteNode(Node<T>* todelete)
 {
