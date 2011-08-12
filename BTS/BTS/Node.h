@@ -19,7 +19,7 @@ public:
 	bool operator==(const Node&) const;
 
 	/*This function should call the operator<< of the node's element*/
-	friend ostream& operator<<(ostream&, const Node<T>&);
+	template <class T> friend ostream& operator<<(ostream&, const Node<T>&);
 
 	Node* getParent() const; 
 	void setParent(Node* node);
@@ -77,7 +77,7 @@ bool Node<T>::operator==(const Node& node) const
 template<class T>
 ostream& operator<<(ostream& out, const Node<T>& node)
 {
-	out<<node.getElement();
+	out<<node._element;
 	return out;
 }
 

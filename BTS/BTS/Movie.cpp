@@ -1,6 +1,5 @@
 #include "Movie.h"
 
-
 using namespace std;
 
 Movie::Movie(string name, int score)

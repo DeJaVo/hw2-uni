@@ -10,6 +10,15 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Movie.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="Tree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Movie.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AA077C9A-6E49-4C1C-A2B4-7EB3D70AB8D6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -54,6 +63,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -73,15 +84,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Movie.h" />
-    <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Node.h" />
-    <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Tree.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\main.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Movie.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
