@@ -1,6 +1,9 @@
 #include <iostream>
 #include "Tree.h"
 #include "Movie.h"
+#include "Node.h"
+
+using namespace std;
 
 int main(){
 	//create a tree for ints
