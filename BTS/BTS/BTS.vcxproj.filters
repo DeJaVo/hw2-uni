@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Movie.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Movie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

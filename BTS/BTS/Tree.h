@@ -101,7 +101,7 @@ bool Tree<T>::deleteNode(Node<T>* todelete)
 	int Fleft=0, Fright=0, isroot=0, numOfChilds=0;
 	if(todelete==_root)
 		isroot=1;
-	else if(*todelete<*(todelete->getParent())//in case todelete was a left child
+	else if(*todelete<*(todelete->getParent()))//in case todelete was a left child
 		Fleft=1;
 	else //in case todelete was a right child
 		Fright=1;
@@ -118,9 +118,9 @@ bool Tree<T>::deleteNode(Node<T>* todelete)
 	if(!numOfChilds)
 	{
 		if(Fleft)//in case todelete was a left child
-			todelete->getParent()->getLeft()=NULL;
+			todelete->getParent()->setLeft(NULL);
 		else if(Fright) 
-			todelete->getParent()->getRight()=NULL;
+			todelete->getParent()->setRight(NULL);
 		delete todelete;
 		return true;
 	}
@@ -131,26 +131,26 @@ bool Tree<T>::deleteNode(Node<T>* todelete)
 		{
 			if(todelete->getRight()!=NULL)//in case the only son was a right child
 			{
-				todelete->getParent()->getLeft()=todelete->getRight();
-				todelete->getRight()->getParent()=todelete->getParent();
+				todelete->getParent()->setLeft(todelete->getRight());
+				todelete->getRight()->setParent(todelete->getParent());
 			}
 			else//in case the only son was a left child
 			{
-				todelete->getParent()->getLeft()=todelete->getLeft();
-				todelete->getLeft()->getParent()=todelete->getParent();
+				todelete->getParent()->setLeft(todelete->getLeft());
+				todelete->getLeft()->setParent(todelete->getParent());
 			}
 		}
 		else// in case todelete was a right child
 		{
 			if(todelete->getRight()!=NULL)//in case the only son was a right child
 			{
-				todelete->getParent()->getRight()=todelete->getRight();
-				todelete->getRight()->getParent()=todelete->getParent();
+				todelete->getParent()->setRight(todelete->getRight());
+				todelete->getRight()->setParent(todelete->getParent());
 			}
 			else//in case the only son was a left child
 			{
-				todelete->getParent()->getRight()=todelete->getLeft();
-				todelete->getLeft()->getParent()=todelete->getParent();
+				todelete->getParent()->setRight(todelete->getLeft());
+				todelete->getLeft()->setParent(todelete->getParent());
 			}
 		}
 		delete todelete;
@@ -160,12 +160,11 @@ bool Tree<T>::deleteNode(Node<T>* todelete)
 	else if(numOfChilds==2)
 	{
 		Node<T>* successor;
-		Node<T>* temp;
-		temp=todelete->getRight();
-		while((temp->getLeft())!=NULL)
-			temp=temp->getLeft();
-		*todelete=*temp;
-		return deleteNode(temp);
+		successor=todelete->getRight();
+		while((successor->getLeft())!=NULL)
+			successor=successor->getLeft();
+		*todelete=*successor;
+		return deleteNode(successor);
 	}
 	return false;
 }
@@ -216,7 +215,7 @@ bool Tree<T>::addElement(const T& ele)
 			else 
 			{
 				if(tempRoot->getRight()!=NULL)
-					tempRoot=tempRoot->getRight()
+					tempRoot=tempRoot->getRight();
 				else//adds the node to the tree
 				{
 					tempRoot->setRight(temp);
