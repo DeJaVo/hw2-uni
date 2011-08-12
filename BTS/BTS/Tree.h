@@ -98,34 +98,75 @@ Node<T>* Tree<T>::getMaximum() const
 template <class T>
 bool Tree<T>::deleteNode(Node<T>* todelete)
 {
-	int Fleft=0, Fright=0, isroot=0;
+	int Fleft=0, Fright=0, isroot=0, numOfChilds=0;
 	if(todelete==_root)
 		isroot=1;
-	else if(todelete->getParent()->getLeft()==todelete)//in case todelete was a left child
+	else if(*todelete<*(todelete->getParent())//in case todelete was a left child
 		Fleft=1;
-	else (todelete->getParent()->getRight()==todelete)//in case todelete was a right child
+	else //in case todelete was a right child
 		Fright=1;
+
+	//finds number of children of todelete
+	if((todelete->getLeft()==NULL)&&(todelete->getRight()==NULL))
+		numOfChilds=0;
+	else if((todelete->getLeft()!=NULL)&&(todelete->getRight()!=NULL))
+		numOfChilds=2;
+	else 
+		numOfChilds=1;
 	
 	//first case- no children
-	if((todelete->getLeft()==NULL)&&(todelete->getRight()==NULL))
+	if(!numOfChilds)
 	{
 		if(Fleft)//in case todelete was a left child
 			todelete->getParent()->getLeft()=NULL;
 		else if(Fright) 
 			todelete->getParent()->getRight()=NULL;
-		delete todelete;//מה זה עושה?!?!?!?!?!?!?!?!?!?!?!!!!!!!!!!!!!!!!!!!!!?!?!?!?
+		delete todelete;
 		return true;
 	}
 	//second case- one child
-	/*else if((todelete->_left==NULL)&&(todelete->_right!=NULL)||(todelete->_left!=NULL)&&(todelete->_right==NULL))
+	else if(numOfChilds==1)
 	{
-		if(todelete->_right!=NULL)
+		if(Fleft)//in case todelete was a left child
 		{
-
+			if(todelete->getRight()!=NULL)//in case the only son was a right child
+			{
+				todelete->getParent()->getLeft()=todelete->getRight();
+				todelete->getRight()->getParent()=todelete->getParent();
+			}
+			else//in case the only son was a left child
+			{
+				todelete->getParent()->getLeft()=todelete->getLeft();
+				todelete->getLeft()->getParent()=todelete->getParent();
+			}
 		}
-	}*/
+		else// in case todelete was a right child
+		{
+			if(todelete->getRight()!=NULL)//in case the only son was a right child
+			{
+				todelete->getParent()->getRight()=todelete->getRight();
+				todelete->getRight()->getParent()=todelete->getParent();
+			}
+			else//in case the only son was a left child
+			{
+				todelete->getParent()->getRight()=todelete->getLeft();
+				todelete->getLeft()->getParent()=todelete->getParent();
+			}
+		}
+		delete todelete;
+		return true;
+	}
 
-
+	else if(numOfChilds==2)
+	{
+		Node<T>* successor;
+		Node<T>* temp;
+		temp=todelete->getRight();
+		while((temp->getLeft())!=NULL)
+			temp=temp->getLeft();
+		*todelete=*temp;
+		return deleteNode(temp);
+	}
 	return false;
 }
 
@@ -186,5 +227,26 @@ bool Tree<T>::addElement(const T& ele)
 		}
 	}
 	return false;
+}
+
+//recursive func, prints all elements in an inorder walk
+template<class T>
+void Tree<T>::inorder(Node<T>* temp) const
+{
+	if((temp->getLeft())!=NULL)
+		inorder(temp->getLeft());
+	cout<<*temp;
+	if((temp->getRight())!=NULL)
+		inorder(temp->getRight());
+	return;
+}
+
+//calls the inorder func
+template<class T>
+void Tree<T>::printTree() const
+{
+	inorder(_root);
+	return;
+
 }
 #endif
