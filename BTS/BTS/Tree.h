@@ -234,7 +234,7 @@ void Tree<T>::inorder(Node<T>* temp) const
 {
 	if((temp->getLeft())!=NULL)
 		inorder(temp->getLeft());
-	cout<<*temp;
+	cout<<*temp<<" ";
 	if((temp->getRight())!=NULL)
 		inorder(temp->getRight());
 	return;
@@ -245,6 +245,7 @@ template<class T>
 void Tree<T>::printTree() const
 {
 	inorder(_root);
+	cout<<endl;
 	return;
 
 }
