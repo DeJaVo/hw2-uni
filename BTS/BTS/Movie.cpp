@@ -39,6 +39,6 @@ bool Movie::operator==(const Movie& mov) const
 
 ostream& operator<<(ostream& out, const Movie& mov)
 {
-	out<<mov._name<<" "<<mov._score;
+	out<<mov._name<<"("<<mov._score<<")";
 	return out;
 }
