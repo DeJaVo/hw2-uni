@@ -1,10 +1,8 @@
 #include <iostream>
 #include "Tree.h"
 #include "Movie.h"
-#include "Node.h"
 
-int main()
-{
+int main(){
 	//create a tree for ints
 	Tree<int> intee; 
 	//add new nodes to the tree
@@ -25,7 +23,7 @@ int main()
 	}
 	//print the nodes in ascending order
 	intee.printTree();
-	cout <<"6 7 9 10 11 12 14 17 20 22 23 **********"<< endl;
+	cout << "6 7 9 10 11 12 14 17 20 22 23 **********" << endl;
 
 	//delete a node with only right child
 	intee.deleteElement(6);
@@ -87,6 +85,8 @@ int main()
 	cout << "found a good one: Good Movie(8) *******" << endl;
 
 	cout << "Good Luck!" << endl;
+
+	delete rootMovie;
 
 	return 0;
 }
