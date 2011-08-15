@@ -67,8 +67,9 @@ int main(){
 
 	//create a tree for movies
 	Movie mymovie("Great Movie",9);
-	Node<Movie>* rootMovie= new Node<Movie>(mymovie);
-	Tree<Movie> movies(rootMovie);
+	Tree<Movie> movies;
+	movies.addElement(mymovie);
+
 	//add new movies
 	movies.addElement(Movie("Good Movie",8));
 	movies.addElement(Movie("The Greatest Movie",9));
@@ -85,8 +86,6 @@ int main(){
 	cout << "found a good one: Good Movie(8) *******" << endl;
 
 	cout << "Good Luck!" << endl;
-
-	delete rootMovie;
 
 	return 0;
 }
