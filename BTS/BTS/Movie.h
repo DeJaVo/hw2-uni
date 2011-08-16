@@ -8,7 +8,7 @@ using namespace std;
 
 class Movie {
 public:
-	Movie(string name, int score);
+	Movie(string name="", int score=0);
 
 	int getScore() const;
 	string getName() const;
