@@ -19,8 +19,7 @@ template <class T>
 class Tree{
 public:
 	Tree():_root(NULL){};
-	Tree(Node<T>* root):_root(root){};
-
+	
 	/*Should return the root of the tree
 	* if the tree is empty should return NULL
 	*/
@@ -61,6 +60,10 @@ public:
 	*/
 	void printTree() const;
 
+	//Free Tree
+	void free_tree(Node<T>* node);
+	//d'tor
+	~Tree();
 private:
 	Node<T>* _root;
 	void inorder(Node<T>*) const;
@@ -257,5 +260,32 @@ void Tree<T>::printTree() const
 	cout<<endl;
 	return;
 
+}
+
+//Free tree
+template<class T>
+void Tree<T>::free_tree(Node<T>* node)
+{
+	Node<T>* temp=node;
+	if((temp->getLeft()==NULL)&&(temp->getRight()==NULL))
+	{
+		delete temp;
+		return;
+	}
+	if(temp->getLeft()!=NULL)
+		free_tree(temp->getLeft());
+	if(temp->getRight()!=NULL)
+		free_tree(temp->getRight());
+	delete temp;
+	return;
+
+
+}
+
+//d'tor
+template<class T>
+Tree<T>::~Tree()
+{
+	free_tree(_root);
 }
 #endif
