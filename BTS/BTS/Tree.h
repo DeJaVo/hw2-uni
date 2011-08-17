@@ -278,8 +278,6 @@ void Tree<T>::free_tree(Node<T>* node)
 		free_tree(temp->getRight());
 	delete temp;
 	return;
-
-
 }
 
 //d'tor

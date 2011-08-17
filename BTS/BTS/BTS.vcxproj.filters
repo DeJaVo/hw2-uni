@@ -18,18 +18,18 @@
     <ClInclude Include="Movie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Node.h">
+    <ClInclude Include="Tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tree.h">
+    <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Movie.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Movie.cpp">
+    <ClCompile Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -11,12 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\Node.h" />
     <ClInclude Include="Movie.h" />
-    <ClInclude Include="Node.h" />
     <ClInclude Include="Tree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\שנה א%27\semester summer\OOP\תרגולים\BTS\BTS\main.cpp" />
     <ClCompile Include="Movie.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
